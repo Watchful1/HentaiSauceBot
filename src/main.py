@@ -83,7 +83,7 @@ def get_submissions_from_multireddit(reddit, multireddit, submissions):
 		# a submission, we'll save it. Then next time we check if it's saved, and skip it if it is. When we're
 		# loading submissions, if we get 10 that are saved, we can assume we've already processed all the older
 		# ones and stop looking
-		for submission in reddit.subreddit(multireddit).new(limit=1000):
+		for submission in reddit.subreddit(multireddit).new(limit=100):
 			if submission.saved:
 				count_skipped += 1
 			else:
